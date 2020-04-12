@@ -7,7 +7,7 @@
   <title>Шахматная доска1</title>
     <style>
         body {
-            margin: 0;
+            margin: 2;
         }
         .cell {
             outline: 1px solid black;
@@ -30,7 +30,7 @@
             background-position: calc(38vmax / -6 * 5 - (1.5px * 5)) 0px;
         }
         .cell.figure.white-pawn {
-            background-position: calc(38vmax / -6 * 5 - (1.5px * 5)) -62px;
+            background-position: calc(38vmax / -6 * 5 - (1.5px * 5)) -6vmax;
         }
         .row-even {
             width: 100vw;
@@ -45,6 +45,7 @@
 
 <body>
 
+<div style="border: 5px double black; width: 50vmax; height: 50vmax;">
     <div class="row-odd">
         <div class="cell light-cell figure" 
         style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) 0px;"></div>
@@ -109,23 +110,24 @@
     </div>
     <div class="row-even">
         <div class="cell dark-cell figure"
-        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -6vmax;"></div>
         <div class="cell light-cell figure"
-        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -6vmax;"></div>
         <div class="cell dark-cell figure"
-        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -6vmax;"></div>
         <div class="cell light-cell figure"
-        style="background-position: calc(38vmax / -6 * 1 + (1.5px * 1)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 1 + (1.5px * 1)) -6vmax;"></div>
         <div class="cell dark-cell figure"
-        style="background-position: calc(38vmax / -6 * 0 + (1.5px * 1)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 0 + (1.5px * 1)) -6vmax;"></div>
         <div class="cell light-cell figure"
-        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -6vmax;;"></div>
         <div class="cell dark-cell figure"
-        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -6vmax;"></div>
         <div class="cell light-cell figure" 
-        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -62px;"></div>
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -6vmax;"></div>
     </div>
+</div>
 
+</body>
 
-
-</body></html>
+</html>
