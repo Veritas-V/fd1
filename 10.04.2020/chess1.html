@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Veronika Shvakova">
+  <title>Шахматная доска1</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        .cell {
+            outline: 1px solid black;
+            width: calc(50vmax / 8);
+            height: calc(50vmax / 8);
+            float: left;
+        }
+        .light-cell {
+            background-color: #fffbdb;
+        }
+        .dark-cell {
+            background-color: #8e2426;
+        }
+        .cell.figure {
+            background-image: url(images/chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(38vmax);
+        }
+        .cell.figure.black-pawn {
+            background-position: calc(38vmax / -6 * 5 - (1.5px * 5)) 0px;
+        }
+        .cell.figure.white-pawn {
+            background-position: calc(38vmax / -6 * 5 - (1.5px * 5)) -62px;
+        }
+        .row-even {
+            width: 100vw;
+            float: left;
+        }
+        .row-odd {
+            width: 100vw;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row-odd">
+        <div class="cell light-cell figure" 
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: calc(38vmax / -6 * 1 + (1.5px * 1)) 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: calc(38vmax / -6 * 0 + (1.5px * 1)) 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) 0px;"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell figure black-pawn"></div>
+        <div class="cell light-cell figure black-pawn"></div>
+        <div class="cell dark-cell figure black-pawn"></div>
+        <div class="cell light-cell figure black-pawn"></div>
+        <div class="cell dark-cell figure black-pawn"></div>
+        <div class="cell light-cell figure black-pawn"></div>
+        <div class="cell dark-cell figure black-pawn"></div>
+        <div class="cell light-cell figure black-pawn"></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell figure white-pawn"></div>
+        <div class="cell dark-cell figure white-pawn"></div>
+        <div class="cell light-cell figure white-pawn"></div>
+        <div class="cell dark-cell figure white-pawn"></div>
+        <div class="cell light-cell figure white-pawn"></div>
+        <div class="cell dark-cell figure white-pawn"></div>
+        <div class="cell light-cell figure white-pawn"></div>
+        <div class="cell dark-cell figure white-pawn"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell figure"
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -62px;"></div>
+        <div class="cell light-cell figure"
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -62px;"></div>
+        <div class="cell dark-cell figure"
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -62px;"></div>
+        <div class="cell light-cell figure"
+        style="background-position: calc(38vmax / -6 * 1 + (1.5px * 1)) -62px;"></div>
+        <div class="cell dark-cell figure"
+        style="background-position: calc(38vmax / -6 * 0 + (1.5px * 1)) -62px;"></div>
+        <div class="cell light-cell figure"
+        style="background-position: calc(38vmax / -6 * 3 - (1.5px * 3)) -62px;"></div>
+        <div class="cell dark-cell figure"
+        style="background-position: calc(38vmax / -6 * 4 - (1.5px * 4)) -62px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: calc(38vmax / -6 * 2 - (1.5px * 2)) -62px;"></div>
+    </div>
+
+
+
+</body></html>
