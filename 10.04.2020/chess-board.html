@@ -7,13 +7,21 @@
   <title>Шахматная доска</title>
     <style>
         body {
-            margin: 0;
+            margin: 1;
         }
         .cell {
             outline: 1px solid black;
             width: calc(50vmax / 8);
             height: calc(50vmax / 8);
             float: left;
+        }
+        .cell.figure {
+            background-image: url(images/chess.png);
+            background-repeat: no-repeat;
+            background-size: calc(38vmax);
+            }
+        .black-pawn {
+            
         }
         .light-cell {
             background-color: #fffbdb;
@@ -33,90 +41,42 @@
 </head>
 
 <body>
-
+<div>
     <div class="row-odd">
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -103px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -210px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell"
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -156px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -50px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: +3px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -156px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -210px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -103px 0px;
-        width: 48px; height: 45px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -103px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -210px 0px;"></div>
+        <div class="cell light-cell figure"
+        style="background-position: -156px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -50px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: +3px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -156px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -210px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -103px 0px;"></div>
     </div>
     <div class="row-even">
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell dark-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
-        <div class="cell light-cell" 
-        style="background-image: url(images/chess.png);
-        background-repeat: no-repeat;
-        background-position: -263px 0px;
-        width: 48px; height: 45px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell dark-cell figure" 
+        style="background-position: -263px 0px;"></div>
+        <div class="cell light-cell figure" 
+        style="background-position: -263px 0px;"></div>
     </div>
     <div class="row-odd">
         <div class="cell light-cell"></div><div class="cell dark-cell"></div>
@@ -226,6 +186,7 @@
         background-position: -103px -50px;
         width: 48px; height: 45px;"></div>
     </div>
+</div>
 
 </body>
 
