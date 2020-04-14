@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Спектр</title>
+  <style>
+    .specter {
+      height: 30px;
+      outline: 1px solid blue;
+      background-image: linear-gradient(to right, 
+      red 0, red 14.28%, 
+      orange 14.28%, orange calc(14.28%*2), 
+      yellow calc(14.28%*2), yellow calc(14.28%*3), 
+      green calc(14.28%*3), green calc(14.28%*4), 
+      lightblue calc(14.28%*4), lightblue calc(14.28%*5), 
+      blue  calc(14.28%*5), blue calc(14.28%*6), 
+      purple calc(14.28%*6));
+    }
+  </style>
+</head>
+<body>
+  <div class="specter"></div>
+</body>
+</html>
