@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Veronika Shvakova">
+  <title>Шахматная доска1</title>
+  <link href="//db.onlinewebfonts.com/c/f8e22feaf5714ddbe7229dd963092c18?family=Chess+Alpha" 
+  rel="stylesheet" type="text/css"/>
+    <style>
+        body {
+            margin: 0vmin;
+            font-family: "Chess Alpha";
+            font-style: normal;
+            font-size: 8vmin;
+        }
+        .margin {
+            margin-top: 0.8vmin;
+            margin-left: 0.8vmin;
+        }
+        .white-figure {
+            color: white;
+        }
+        .cell {
+            outline: 1px solid black;
+            width: calc(80vmin / 8);
+            height: calc(80vmin / 8);
+            float: left;
+        }
+        .light-cell {
+            background-image: linear-gradient(#fffbdb, red);
+            box-shadow: 0 0 10vmin rgba(0, 0, 0, 0.5);
+        }
+        .dark-cell {
+            background-image: linear-gradient(#8e2426, rgb(44, 44, 44));
+            box-shadow: 0 0 10vmin rgba(0, 0, 0, 0.5);
+        }
+        .row-even {
+            width: 120vmin;
+            float: left;
+        }
+        .row-odd {
+            width: 120vmin;
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row-odd">
+        <div class="cell light-cell"><p class="margin">t</p></div>
+        <div class="cell dark-cell"><p class="margin">j</p></div>
+        <div class="cell light-cell"><p class="margin">n</p></div>
+        <div class="cell dark-cell"><p class="margin">w</p></div>
+        <div class="cell light-cell"><p class="margin">l</p></div>
+        <div class="cell dark-cell"><p class="margin">n</p></div>
+        <div class="cell light-cell"><p class="margin">j</p></div>
+        <div class="cell dark-cell"><p class="margin">t</p></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"><p class="margin">o</p></div>
+        <div class="cell light-cell"><p class="margin">o</p></div>
+        <div class="cell dark-cell"><p class="margin">o</p></div>
+        <div class="cell light-cell"><p class="margin">o</p></div>
+        <div class="cell dark-cell"><p class="margin">o</p></div>
+        <div class="cell light-cell"><p class="margin">o</p></div>
+        <div class="cell dark-cell"><p class="margin">o</p></div>
+        <div class="cell light-cell"><p class="margin">o</p></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+        <div class="cell light-cell"></div><div class="cell dark-cell"></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+        <div class="cell dark-cell"></div><div class="cell light-cell"></div>
+    </div>
+    <div class="row-odd">
+        <div class="cell light-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">o</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">o</p></div>
+    </div>
+    <div class="row-even">
+        <div class="cell dark-cell"><p class="margin white-figure">t</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">j</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">n</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">w</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">l</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">n</p></div>
+        <div class="cell dark-cell"><p class="margin white-figure">j</p></div>
+        <div class="cell light-cell"><p class="margin white-figure">t</p></div>
+    </div>
+
+</body>
+
+</html>
