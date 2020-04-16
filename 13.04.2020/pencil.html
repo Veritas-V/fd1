@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Veronika Shvakova">
+  <title>Карандаш</title>
+
+  <style>
+      body {
+        margin: 0vmin;
+      }
+      .shaft {
+        width: 99vmin;
+        height: 33vmin;
+        outline: 1px solid transparent;
+        background-image: linear-gradient(to top, 
+        #d14914 0vmin, #d14914 11vmin,
+        #a33910 11vmin, #a33910 calc(11vmin*2), 
+        #d14914 calc(11vmin*2), #d14914 calc(11vmin*3));
+      }
+      .center {
+        background-image: linear-gradient(#c2bea4, #c2bea4);
+        background: transparent;
+        border-radius: 50%;
+        border: 12.5vmin solid transparent;
+        border-left: 12.5vmin solid #c2bea4;
+        padding: 11vmin; 
+        width: 0vmin;
+        height: 0vmin;
+        float: left;
+        margin-top: -40vmin;
+        margin-left: 92.2vmin;
+      }
+      .stylus {
+        background-image: linear-gradient(black, black);
+        background: transparent;
+        border-radius: 50%;
+        border: 12.5vmin solid transparent;
+        border-left: 12.5vmin solid black;
+        float: left;
+        margin-top: -12.5vmin;
+        margin-left: -12.5vmin;
+      }
+    </style>
+</head>
+
+
+<body>
+    
+    <div class="shaft"></div>
+    <div class="center">
+        <div class="stylus"></div>
+    </div>
+
+</body>
+
+</html>
