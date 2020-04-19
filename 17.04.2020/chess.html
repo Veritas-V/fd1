@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Veronika Shvakova">
+  <title>Шахматная доска</title>
+    <style>
+      body {
+        margin: 1vmin;
+      }
+      body>div {
+        width: 93vmin;
+        height: 93vmin;
+        display: inline-block;
+      }
+      body>div.number.top::before { 
+        content: "abcdefgh";
+        font-size: 5vmin;
+        letter-spacing: 7.7vmin;
+        padding: 10.5vmin; 
+      }
+      body>div>div.number.left:nth-child(1):before {
+        content: "1";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: left;
+      }
+      body>div>div.number.left:nth-child(2):before { 
+        content: "2";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(3):before { 
+        content: "3";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(4):before { 
+        content: "4";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(5):before { 
+        content: "5";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(6):before { 
+        content: "6";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(7):before { 
+        content: "7";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left:nth-child(8):before { 
+        content: "8";
+        font-size: 5vmin;
+        padding: 2vmin; 
+        float: left;
+      }
+      body>div>div.number.left::after { 
+        content: "1";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(1):after { 
+        content: "1";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(2):after { 
+        content: "2";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(3):after { 
+        content: "3";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(4):after { 
+        content: "4";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(5):after { 
+        content: "5";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(6):after { 
+        content: "6";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(7):after { 
+        content: "7";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div>div.number.left:nth-child(8):after { 
+        content: "8";
+        font-size: 5vmin;
+        padding: 2vmin;
+        float: right;
+      }
+      body>div.number.bottom::after { 
+        content: "abcdefgh";
+        font-size: 5vmin;
+        letter-spacing: 7.7vmin;
+        padding: 10.5vmin; 
+      }
+      body>div>div {
+        float: left;
+      }
+      body>div>div>div:nth-child(odd) {
+        width: calc(80vmin / 8);
+        height: calc(80vmin / 8);
+        background-color: red;
+        outline: 1px solid black;
+        float: left;
+      }
+      body>div>div>div:nth-child(even) {
+        width: calc(80vmin / 8);
+        height: calc(80vmin / 8);
+        background-color: white;
+        outline: 1px solid black;
+        float: left;
+      }
+      .cell.figure {
+        background-image: url(images/chess.png);
+        background-repeat: no-repeat;
+        background-size: 55vmin;
+      }
+      .cell.figure.black-pawn {
+        background-position: calc(55vmin / -6 * 5 - 1.5vmin) 0vmin;
+      }
+      .cell.figure.white-pawn {
+        background-position: calc(55vmin / -6 * 5 - 1.5vmin) -9vmin;
+      }
+    </style>
+</head>
+
+<body>
+    <div class="number top bottom">
+      <div class="number left">
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 2 - 0vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 4 - 1vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 3 - 0.3vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 1 + 0.8vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 0 + 1.3vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 3 - 0.3vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 4 - 1vmin) +0.7vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 2 - 0vmin) +0.7vmin;"></div>
+      </div>
+      <div class="number left">
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+        <div class="cell figure black-pawn"></div>
+      </div>
+      <div class="number left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="number left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="number left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="number left">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="number left">
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+        <div class="cell figure white-pawn"></div>
+      </div>
+      <div class="number left">
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 2 - 0vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 4 - 1vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 3 - 0.3vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 1 + 0.8vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 0 + 1.3vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 3 - 0.3vmin) -9vmin;"></div>
+        <div class="cell figure"
+        style="background-position: calc(55vmin / -6 * 4 - 1vmin) -9vmin;"></div>
+        <div class="cell figure" 
+        style="background-position: calc(55vmin / -6 * 2 - 0vmin) -9vmin;"></div>
+      </div>
+    </div>
+  </body>
+  </html>
