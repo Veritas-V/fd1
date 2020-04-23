@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Доска</title>
+  <style>
+      body {
+          margin-top: -2vmin;
+          margin-left: 10vmin;
+      }
+      body>div {
+          width: 88vmin;
+          height: 88vmin;
+          font-size: 0;
+      }
+      body>div::before, body>div::after {
+          content: "abcdefgh";
+          height: 10vmin;
+          display: block;
+          line-height: 10vmin;
+          font-size: 4vmin;
+          margin-left: 4.5vmin;
+          letter-spacing: 8.2vmin;
+      }
+      body>div>div {
+          width: 10vmin;
+          height: 10vmin;
+          display: inline-block;
+      }
+      body>div>div::before {
+          display: inline-block;
+          content: "";
+          width: 10vmin;
+          height: 10vmin;
+          font-size: 4vmin;
+          vertical-align: top;
+          line-height: 10vmin;
+          text-align: center;
+          margin-left: -10vmin;
+      }
+      body>div>div::after {
+          display: inline-block;
+          content: "";
+          width: 10vmin;
+          height: 10vmin;
+          font-size: 4vmin;
+          vertical-align: top;
+          line-height: 10vmin;
+          text-align: center;
+          margin-top: -10vmin;
+          margin-left: +10vmin;
+      }
+      body>div>div:nth-child(1)::before, body>div>div:nth-child(8)::after {
+          content: "1";
+      }
+      body>div>div:nth-child(9)::before, body>div>div:nth-child(16)::after {
+          content: "2";
+      }
+      body>div>div:nth-child(17)::before, body>div>div:nth-child(24)::after {
+          content: "3";
+      }
+      body>div>div:nth-child(25)::before, body>div>div:nth-child(32)::after {
+          content: "4";
+      }
+      body>div>div:nth-child(33)::before, body>div>div:nth-child(40)::after {
+          content: "5";
+      }
+      body>div>div:nth-child(41)::before, body>div>div:nth-child(48)::after {
+          content: "6";
+      }
+      body>div>div:nth-child(49)::before, body>div>div:nth-child(56)::after {
+          content: "7";
+      }
+      body>div>div:nth-child(57)::before, body>div>div:nth-child(64)::after {
+          content: "8";
+      }
+      body>div>div:nth-child(even) {
+        background-color: white;
+        outline: 1px solid red;
+      }
+      body>div>div:nth-child(8)+div, 
+      body>div>div:nth-child(10)+div,
+      body>div>div:nth-child(12)+div,
+      body>div>div:nth-child(14)+div,
+      body>div>div:nth-child(24)+div,
+      body>div>div:nth-child(26)+div,
+      body>div>div:nth-child(28)+div,
+      body>div>div:nth-child(30)+div,
+      body>div>div:nth-child(40)+div,
+      body>div>div:nth-child(42)+div,
+      body>div>div:nth-child(44)+div,
+      body>div>div:nth-child(46)+div,
+      body>div>div:nth-child(56)+div,
+      body>div>div:nth-child(58)+div,
+      body>div>div:nth-child(60)+div,
+      body>div>div:nth-child(62)+div {
+        background-color: white;
+      }
+      body>div>div:nth-child(odd) {
+        background-color: red;
+        outline: 1px solid red;
+      }
+      body>div>div:nth-child(9)+div {
+        background-color: red;
+      }
+      body>div>div:nth-child(11)+div,
+      body>div>div:nth-child(13)+div,
+      body>div>div:nth-child(15)+div,
+      body>div>div:nth-child(25)+div,
+      body>div>div:nth-child(27)+div,
+      body>div>div:nth-child(29)+div,
+      body>div>div:nth-child(31)+div,
+      body>div>div:nth-child(41)+div,
+      body>div>div:nth-child(43)+div,
+      body>div>div:nth-child(45)+div,
+      body>div>div:nth-child(47)+div,
+      body>div>div:nth-child(57)+div,
+      body>div>div:nth-child(59)+div,
+      body>div>div:nth-child(61)+div,
+      body>div>div:nth-child(63)+div {
+        background-color: red;
+      }
+      body>div>div:first-child,
+      body>div>div:nth-child(2),
+      body>div>div:nth-child(3),
+      body>div>div:nth-child(4),
+      body>div>div:nth-child(5),
+      body>div>div:nth-child(6),
+      body>div>div:nth-child(7),
+      body>div>div:nth-child(8),
+      body>div>div:nth-child(9),
+      body>div>div:nth-child(10),
+      body>div>div:nth-child(11),
+      body>div>div:nth-child(12),
+      body>div>div:nth-child(13),
+      body>div>div:nth-child(14),
+      body>div>div:nth-child(15),
+      body>div>div:nth-child(16),
+      body>div>div:nth-child(49),
+      body>div>div:nth-child(50),
+      body>div>div:nth-child(51),
+      body>div>div:nth-child(52),
+      body>div>div:nth-child(53),
+      body>div>div:nth-child(54),
+      body>div>div:nth-child(55),
+      body>div>div:nth-child(56),
+      body>div>div:nth-child(57),
+      body>div>div:nth-child(58),
+      body>div>div:nth-child(59),
+      body>div>div:nth-child(60),
+      body>div>div:nth-child(61),
+      body>div>div:nth-child(62),
+      body>div>div:nth-child(63),
+      body>div>div:nth-child(64) {
+          background-image: url(images/chess.png);
+          background-size: 60vmin;
+          background-repeat: no-repeat;
+      }
+      body>div>div:nth-child(9),
+      body>div>div:nth-child(10),
+      body>div>div:nth-child(11),
+      body>div>div:nth-child(12),
+      body>div>div:nth-child(13),
+      body>div>div:nth-child(14),
+      body>div>div:nth-child(15),
+      body>div>div:nth-child(16) {
+        background-position: -52vmin 0;
+      }
+      body>div>div:nth-child(49),
+      body>div>div:nth-child(50),
+      body>div>div:nth-child(51),
+      body>div>div:nth-child(52),
+      body>div>div:nth-child(53),
+      body>div>div:nth-child(54),
+      body>div>div:nth-child(55),
+      body>div>div:nth-child(56) {
+        background-position: -52vmin -10vmin;
+      }
+      body>div>div:first-child,
+      body>div>div:nth-child(8) {
+        background-position-x: -20vmin;
+      }
+      body>div>div:nth-child(2),
+      body>div>div:nth-child(7) {
+        background-position-x: -30.5vmin;
+      }
+      body>div>div:nth-child(3),
+      body>div>div:nth-child(6) {
+        background-position-x: -41.5vmin;
+      }
+      body>div>div:nth-child(5) {
+        background-position-x: -9.5vmin;
+      }
+
+      body>div>div:nth-child(57),
+      body>div>div:nth-child(64) {
+        background-position: -20vmin -10vmin;
+      }
+      body>div>div:nth-child(58),
+      body>div>div:nth-child(63) {
+        background-position: -30.5vmin -10vmin;
+      }
+      body>div>div:nth-child(59),
+      body>div>div:nth-child(62) {
+        background-position: -41.5vmin -10vmin;
+      }
+      body>div>div:nth-child(60) {
+        background-position: +1vmin -10vmin;
+      }
+      body>div>div:nth-child(61) {
+        background-position: -9.5vmin -10vmin;
+      }
+  </style>
+</head>
+<body>
+  <div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</body>
+</html>
