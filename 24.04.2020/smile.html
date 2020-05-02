@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Smile</title>
+  <style>
+      body {
+        margin: 0;
+      }
+      body>div {
+        border: 3vmin solid black;
+        border-radius: 50%;
+        width: 80vmin;
+        height: 80vmin;
+        position: absolute;
+      }
+      /*глаз первый*/
+      body>div>div:nth-child(1) {
+        border: 3vmin solid black;
+        border-bottom-color: transparent;
+        position: absolute;
+        top: 20vmin;
+        left: 10vmin;
+        border-radius: 50%;
+        width: 15vmin;
+        height: 15vmin;
+      }
+      body>div>div:nth-child(1)>div:first-child {
+        border: 1.5vmin solid black;
+        border-bottom-right-radius: 45%;
+        border-bottom-left-radius: 45%;
+        position: absolute;
+        top: 7vmin;
+        left: -3vmin;
+        z-index: 8;
+      }
+      body>div>div:nth-child(1)>div:last-child {
+        background-color: white;
+        border: 1.5vmin solid black;
+        border-bottom-right-radius: 45%;
+        border-bottom-left-radius: 45%;
+        position: absolute;
+        top: 7vmin;
+        left: 15vmin;
+        z-index: 8;
+      }
+      /*глаз второй*/
+      body>div>div:nth-child(2) {
+        border: 3vmin solid black;
+        border-bottom-color: transparent;
+        position: absolute;
+        top: 20vmin;
+        left: 49vmin;
+        border-radius: 50%;
+        width: 15vmin;
+        height: 15vmin;
+        z-index: 5;
+      }
+      body>div>div:nth-child(2)>div:first-child {
+        border: 1.5vmin solid black;
+        border-bottom-right-radius: 45%;
+        border-bottom-left-radius: 45%;
+        position: absolute;
+        top: 7vmin;
+        left: -3vmin;
+        z-index: 4;
+      }
+      body>div>div:nth-child(2)>div:last-child {
+        background-color: white;
+        border: 1.5vmin solid black;
+        border-bottom-right-radius: 45%;
+        border-bottom-left-radius: 45%;
+        position: absolute;
+        top: 7vmin;
+        left: 15vmin;
+        z-index: 4;
+      }
+      body>div>div:nth-child(2)>div:nth-child(2) {
+        background-color: white;
+        width: 68vmin;
+        height: 20vmin;
+        position: absolute;
+        top: 7.5vmin;
+        left: -46vmin;
+        z-index: 3;
+      }
+      /*улыбка*/
+      body>div>div:nth-child(3) {
+        border: 3vmin solid black;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+        position: absolute;
+        top: 19.5vmin;
+        left: 12vmin;
+        border-radius: 50%;
+        border-top-left-radius: 1%;
+        border-top-right-radius: 1%;
+        width: 50vmin;
+        height: 50vmin;
+      }
+      body>div>div:nth-child(3)>div:first-child {
+        border: 3vmin solid black;
+        border-color: transparent transparent transparent black;
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 45vmin;
+        height: 45vmin;
+        position: absolute;
+        top: 1.5vmin;
+        left: -2.1vmin;
+        transform: rotate(-18.5deg);
+      }
+      body>div>div:nth-child(3)>div:last-child {
+        border: 3vmin solid black;
+        border-color: transparent transparent transparent black;
+        border-bottom-left-radius: 50%;
+        border-top-left-radius: 50%;
+        width: 45vmin;
+        height: 45vmin;
+        position: absolute;
+        top: 1.5vmin;
+        left: 1.1vmin;
+        transform: rotate(-164.5deg);
+        z-index: 4;
+      }
+      body>div>div:nth-child(3)>div:nth-child(2) {
+        border: 1.5vmin solid black;
+        border-top-right-radius: 45%;
+        border-top-left-radius: 45%;
+        position: absolute;
+        top: 25vmin;
+        left: -2.1vmin;
+        z-index: 5;
+      }
+      body>div>div:nth-child(3)>div:nth-child(3) {
+        border: 1.5vmin solid black;
+        border-top-right-radius: 45%;
+        border-top-left-radius: 45%;
+        position: absolute;
+        top: 25vmin;
+        left: 49vmin;
+        z-index: 6;
+      }
+  </style>
+</head>
+<body>
+  <div>
+    <div>
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+    <div>
+      <div></div>
+      <div></div>
+      <div>
+        <div></div>
+      </div>
+      <div></div>
+    </div>
+  </div>
+</body>
+</html>
