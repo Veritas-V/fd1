@@ -7,7 +7,7 @@
   <title>Шахматная доска</title>
     <style>
       body {
-        margin: 1vmin;
+        margin: 0vmin;
       }
       body>div {
         width: 93vmin;
@@ -131,14 +131,14 @@
       body>div>div {
         float: left;
       }
-      body>div>div>div:nth-child(odd) {
+      body>div>div:nth-child(odd)>div:nth-child(odd) {
         width: calc(80vmin / 8);
         height: calc(80vmin / 8);
         background-color: red;
         outline: 1px solid black;
         float: left;
       }
-      body>div>div>div:nth-child(even) {
+      body>div>div:nth-child(even)>div:nth-child(even) {
         width: calc(80vmin / 8);
         height: calc(80vmin / 8);
         background-color: white;
