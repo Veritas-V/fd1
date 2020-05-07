@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Калькулятор</title>
-  <!-- <link rel="stylesheet" href="calculator.css"> -->
   <style>
       body {
           font-family: Arial, sans-serif;
@@ -17,6 +16,9 @@
         overflow: hidden;
         position: relative;
       }
+      body>div>div {
+        position: absolute;
+      }
       .image {
           width: 580px;
           height: 530px;
@@ -27,105 +29,195 @@
       }
       .phone {
           background-position: 0px -530px;
-          opacity: 0.5;
+          /* opacity: 0.5; */
       }
       .home {
           background-position: 0px -1590px;
-          opacity: 0.5;
+          /* opacity: 0.5; */
       }
       .car {
           background-position: 0px -1060px;
-          opacity: 0.5;
+          /* opacity: 0.5; */
       }
       .plane {
           background-position: 0px -2120px;
-          opacity: 0.5;
+          /* opacity: 0.5; */
       }
-      /*таймер*/
-      div>div:nth-child(6) {
-          position: absolute;
+      .time {
+          width: 140px;
+          height: 24px;
           top: 18px;
           left: 340px;
-          height: 24px;
-          width: 140px;
           font-weight: normal;
           color: rgb(229, 248, 176);
           line-height: 24px;
           text-align: center;
       }
-      span {
+      .time-font {
           font-size: 0.6em;
       }
-      /*вторая колонка*/
-      body>div>div:nth-child(n+7):nth-child(-n+11) {
+      .cur-line {
+          top: 103px;
+          left: 267px;
+          color: rgb(229, 248, 176);
+      }
+      .firstСolumn {
+          width: 115px;
+          height: 20px;
+          right: 330px;
+          font-weight: normal;
+          line-height: 20px;
+          text-align: right;
+          color: rgb(229, 248, 176);
+      }
+      .fcOne {
+          top: 102px;
+      }
+      .fcThree {
+          top: 148px;
+      }
+      .fcFour {
+          top: 170px;
+      }
+      .fcFive {
+          top: 192px;
+      }
+      .fcSix {
+          top: 214px;
+      }
+      .fcSeven {
+          top: 236px;
+      }
+      .secondСolumn {
           font-size: 12px;
-          position: absolute;
           width: 115px;
           height: 20px;
           font-weight: normal;
           color: rgb(229, 248, 176);
           line-height: 20px;
       }
-      body>div>div:nth-child(n+7) {
+      .scThree {
           top: 148px;
           left: 266px;
       }
-      body>div>div:nth-child(n+8) {
+      .scFour {
           top: 170px;
           left: 266px;
       }
-      body>div>div:nth-child(n+9) {
+      .scFive {
           top: 192px;
           left: 266px;
       }
-      body>div>div:nth-child(n+10) {
+      .scSix {
           top: 214px;
           left: 266px;
       }
-      body>div>div:nth-child(n+11) {
+      .scSeven {
           top: 236px;
           left: 266px;
       }
-      /*сумма*/
-      input {
-          position: absolute; 
-          font-size: 18px; 
-          left: 203px; 
-          top: 50px; 
-          border: none; 
-          outline: none; 
-          background: transparent; 
-          height: 24px; width: 70px; 
-          text-align: right;
+      .percent {
+          width: 35px;
+          height: 24px;
+          top: 51px;
+          left: 390px;
+          font-weight: normal;
+          color: rgb(229, 248, 176);
+          line-height: 24px;
       }
-
+      .month {
+          width: 24px;
+          height: 24px;
+          top: 101px;
+          left: 360px;
+          font-weight: normal;
+          color: rgb(229, 248, 176);
+          line-height: 24px;
+          text-align: center;
+      }
+      .size {
+          font-size: 18px;
+      }
+      .up-month, .down-month {
+          position: absolute;
+          width: 20px;
+          height: 6px;
+          left: 2px;
+          cursor: pointer;
+      }
+      .prev {
+          top: -6px;
+      }
+      .next {
+          bottom: -6px;
+      }
+      .cur-summ {
+          width: 35px;
+          height: 24px;
+          top: 51px;
+          left: 292px;
+          font-weight: normal;
+          color: rgb(229, 248, 176);
+          line-height: 24px;
+      }
+      .up-summ, .dowm-summ {
+          position: absolute;
+          width: 20px;
+          height: 6px;
+          left: 8px;
+          cursor: pointer;
+      }
   </style>
 </head>
 <body style="background: black">
-    <div>
+    <input id="one" type="radio" name="month" checked>
+    <input id="two" type="radio" name="month">
+    <input id="three" type="radio" name="month">
+    <input id="four" type="radio" name="month">
+    <input id="five" type="radio" name="month">
+    <input id="six" type="radio" name="month">
+    <input id="seven" type="radio" name="month">
+    <input id="eight" type="radio" name="month">
+    <input id="nine" type="radio" name="month">
+    <input id="ten" type="radio" name="month">
+    <input id="eleven" type="radio" name="month">
+    <input id="twelve" type="radio" name="month">
+    <div id="calculator">
         <div class="image"></div>
         <div class="image phone"></div>
         <div class="image home"></div>
         <div class="image car"></div>
         <div class="image plane"></div>
-        <div>
-            "0"
-            <span>руб.</span>
-            " 0"
-            <span style="font-size: 0.8em;">.00</span>
-            <span>коп.</span>
+        <div class="time">
+            <!-- "0" -->
+            <span class="time-font">руб.</span>
+            <!-- " 0" -->
+            <span class="time-font" style="font-size: 0.8em;">.00</span>
+            <span class="time-font">коп.</span>
         </div>
-        <input>
-        <div>
-            <span>RUB</span>
-            <div></div>
-            <div></div>
+        <div class="cur-line">RUB</div>
+        <div class="firstСolumn fcOne">6,600.00</div>
+        <div class="firstСolumn fcThree">300.00</div>
+        <div class="firstСolumn fcFour">10.00</div>
+        <div class="firstСolumn fcFive">0.42</div>
+        <div class="firstСolumn fcSix">0.01</div>
+        <div class="firstСolumn fcSeven">0.00</div>
+        <div class="secondСolumn scThree">в месяц</div>
+        <div class="secondСolumn scFour">в день</div>
+        <div class="secondСolumn scFive">в час</div>
+        <div class="secondСolumn scSix">в минуту</div>
+        <div class="secondСolumn scSeven">в секунду</div>
+        <div class="percent">10%</div>
+        <div class="month">
+            <span class="size">12</span>
+            <div class="up-month prev"></div>
+            <div class="down-month next"></div>
         </div>
-        <div>в месяц</div>
-        <div>в день</div>
-        <div>в час</div>
-        <div>в минуту</div>
-        <div>в секунду</div>
+        <div class="cur-summ">
+            <span class="size">RUB</span>
+            <div class="up-summ prev"></div>
+            <div class="dowm-summ next"></div>
+        </div>
     </div>
 </body>
 </html>
