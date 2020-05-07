@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дарт Вейдер</title>
+  <style>
+      body {
+          margin: 0;
+      }
+      div {
+          width: 200px;
+          height: 200px;
+      }
+      [name=vader] {
+          position: absolute;
+      }
+      .theFirst,
+      .theSecond,
+      .theThird,
+      .theFourth,
+      .theFifth {
+          display: none;
+          position: absolute;
+      }
+      .theFirst {
+          display: block;
+      }
+      [type=radio]:nth-of-type(1):checked ~ div>.theFirst,
+      [type=radio]:nth-of-type(2):checked ~ div>.theSecond,
+      [type=radio]:nth-of-type(3):checked ~ div>.theThird,
+      [type=radio]:nth-of-type(4):checked ~ div>.theFourth,
+      [type=radio]:nth-of-type(5):checked ~ div>.theFifth {
+          display: block;
+      } 
+      .prevSlide, .nextSlide {
+          width: 0;
+          height: 0;
+          border: 10px solid transparent;
+          position: absolute;
+          top: 90px;
+      }
+      .prevSlide {
+          left: 0px;
+          border-right: 10px solid red;
+      }
+      .nextSlide {
+          left: 180px;
+          border-left: 10px solid red;
+      }
+      [type=radio]:nth-of-type(1):checked ~ div>.pins>[for=one],
+      [type=radio]:nth-of-type(2):checked ~ div>.pins>[for=two], 
+      [type=radio]:nth-of-type(3):checked ~ div>.pins>[for=three], 
+      [type=radio]:nth-of-type(4):checked ~ div>.pins>[for=four], 
+      [type=radio]:nth-of-type(5):checked ~ div>.pins>[for=five] {
+          background-color: blue;
+      }
+      .pins>[for=one],
+      .pins>[for=two],
+      .pins>[for=three],
+      .pins>[for=four],
+      .pins>[for=five] {
+          width: 10px;
+          height: 10px;
+          background-color: red;
+          position: absolute;
+          border-radius: 50%;
+          top: 180px;
+      }
+      .pins>[for=one] {
+          left: 65px;
+      }
+      .pins>[for=two] {
+          left: 85px;
+      }
+      .pins>[for=three] {
+          left: 105px;
+      }
+      .pins>[for=four] {
+          left: 125px;
+      }
+      .pins>[for=five] {
+          left: 145px;
+      }
+  </style>
+  <head>
+  <body>
+      <input type="radio" id="one" name="vader" cheсked>
+      <input type="radio" id="two" name="vader">
+      <input type="radio" id="three" name="vader">
+      <input type="radio" id="four" name="vader">
+      <input type="radio" id="five" name="vader">
+      <div id="slider">
+          <section class="theFirst slide">
+              <img src="https://vk.vkfaces.com/604829/v604829812/21e0e/jCxnyhu09r4.jpg">
+              <label for="five" class="prevSlide"></label>
+              <label for="two" class="nextSlide"></label>
+          </section>
+          <section class="theSecond slide">
+              <img src="https://pp.userapi.com/c837625/v837625883/1f184/PkpPLNNBr2U.jpg">
+              <label for="one" class="prevSlide"></label>
+              <label for="three" class="nextSlide"></label>
+          </section>
+          <section class="theThird slide">
+              <img src="http://i.playground.ru/i/user/2043359/avatar.jpg">
+              <label for="two" class="prevSlide"></label>
+              <label for="four" class="nextSlide"></label>
+          </section>
+          <section class="theFourth slide">
+              <img src="https://pp.userapi.com/c630323/v630323161/20bb3/T3Az9-vrmR4.jpg">
+              <label for="three" class="prevSlide"></label>
+              <label for="five" class="nextSlide"></label>
+          </section>
+          <section class="theFifth slide">
+              <img src="https://pp.userapi.com/c630520/v630520889/4664/wtEVyP_teoA.jpg">
+              <label for="four" class="prevSlide"></label>
+              <label for="one" class="nextSlide"></label>
+          </section>
+          <div class="pins">
+              <label for="one"></label>
+              <label for="two"></label>
+              <label for="three"></label>
+              <label for="four"></label>
+              <label for="five"></label>
+          </div>
+      </div>
+  </body>
+</head>
