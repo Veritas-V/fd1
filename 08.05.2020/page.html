@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Пример со ссылками внутри страницы</title>
+  <style>
+      body {
+          width: 900px;
+      }
+      div {
+          width: 300px;
+          display: inline-block;
+      }
+      @media screen and (max-width: 300px) {
+        div:nth-child(1) {
+          display: inline-block;
+        }
+        div:nth-child(2) {
+          display: none;
+        }
+        div:nth-child(3) {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 300px) and (max-width: 600px) {
+        div:nth-child(1) {
+          display: none;
+        }
+        div:nth-child(2) {
+          display: inline-block;
+        }
+        div:nth-child(3) {
+          display: none;
+        }
+      }
+      @media screen and (min-width: 600px) {
+        div:nth-child(1) {
+          display: none;
+        }
+        div:nth-child(2) {
+          display: none;
+        }
+        div:nth-child(3) {
+          display: inline-block;
+        }
+      }
+  </style>
+</head>
+<body>
+    <div>
+        < 300
+    </div>
+    <div>
+        < 300 > 600
+    </div>
+    <div>
+        > 600
+    </div>
+</body>
+</html>
