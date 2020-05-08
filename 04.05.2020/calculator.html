@@ -9,6 +9,7 @@
           font-family: Arial, sans-serif;
           font-style: normal;
           font-size: 18px;
+          margin: 0;
       }
       body>div {
         width: 580px;
@@ -29,37 +30,31 @@
       }
       .phone {
           background-position: 0px -530px;
-          /* opacity: 0.5; */
+          opacity: 0.5;
       }
       .home {
           background-position: 0px -1590px;
-          /* opacity: 0.5; */
+          opacity: 0.5;
       }
       .car {
           background-position: 0px -1060px;
-          /* opacity: 0.5; */
+          opacity: 0.5;
       }
       .plane {
           background-position: 0px -2120px;
-          /* opacity: 0.5; */
+          opacity: 0.5;
       }
-      .time {
-          width: 140px;
-          height: 24px;
-          top: 18px;
-          left: 340px;
-          font-weight: normal;
-          color: rgb(229, 248, 176);
-          line-height: 24px;
-          text-align: center;
+      [name="month"]:nth-of-type(n+3):checked ~ .calculator .phone {
+          opacity: 1;
       }
-      .time-font {
-          font-size: 0.6em;
+      [name="month"]:nth-of-type(n+6):checked ~ .calculator .car {
+          opacity: 1;
       }
-      .cur-line {
-          top: 103px;
-          left: 267px;
-          color: rgb(229, 248, 176);
+      [name="month"]:nth-of-type(n+9):checked ~ .calculator .home {
+          opacity: 1;
+      }
+      [name="month"]:nth-of-type(12):checked ~ .calculator .plane {
+          opacity: 1;
       }
       .firstСolumn {
           width: 115px;
@@ -71,22 +66,22 @@
           color: rgb(229, 248, 176);
       }
       .fcOne {
-          top: 102px;
+          top: 124px;
       }
       .fcThree {
-          top: 148px;
-      }
-      .fcFour {
           top: 170px;
       }
-      .fcFive {
+      .fcFour {
           top: 192px;
       }
-      .fcSix {
+      .fcFive {
           top: 214px;
       }
-      .fcSeven {
+      .fcSix {
           top: 236px;
+      }
+      .fcSeven {
+          top: 258px;
       }
       .secondСolumn {
           font-size: 12px;
@@ -97,29 +92,29 @@
           line-height: 20px;
       }
       .scThree {
-          top: 148px;
-          left: 266px;
-      }
-      .scFour {
           top: 170px;
           left: 266px;
       }
-      .scFive {
+      .scFour {
           top: 192px;
           left: 266px;
       }
-      .scSix {
+      .scFive {
           top: 214px;
           left: 266px;
       }
-      .scSeven {
+      .scSix {
           top: 236px;
+          left: 266px;
+      }
+      .scSeven {
+          top: 258px;
           left: 266px;
       }
       .percent {
           width: 35px;
           height: 24px;
-          top: 51px;
+          top: 74px;
           left: 390px;
           font-weight: normal;
           color: rgb(229, 248, 176);
@@ -138,64 +133,205 @@
       .size {
           font-size: 18px;
       }
-      .up-month, .down-month {
-          position: absolute;
-          width: 20px;
-          height: 6px;
-          left: 2px;
-          cursor: pointer;
-      }
-      .prev {
-          top: -6px;
-      }
-      .next {
-          bottom: -6px;
-      }
-      .cur-summ {
-          width: 35px;
-          height: 24px;
-          top: 51px;
-          left: 292px;
-          font-weight: normal;
+      .currentVault>span {
+          display: none;
           color: rgb(229, 248, 176);
-          line-height: 24px;
       }
-      .up-summ, .dowm-summ {
+      #vault:checked ~ .calculator>.currentVault>span:nth-of-type(2) {
+          display: inline;
+      }
+      #vault:not(:checked) ~ .calculator>.currentVault>span:nth-of-type(1) {
+          display: inline;
+      }
+      .currentVault {
+          position: relative;
+          top: 74px;
+          left: 290px;
+          z-index: 10;
+      }
+      [for="vault"] {
           position: absolute;
-          width: 20px;
-          height: 6px;
-          left: 8px;
+          left: 12px;
+          z-index: 10;
+          color: rgb(229, 248, 176);
           cursor: pointer;
+      }
+      [for="vault"]:nth-of-type(1) {
+          top: -14.5px;
+      }
+      [for="vault"]:nth-of-type(2) {
+          bottom: -15.5px;
+      }
+      .vaultLabel::before {
+          content: "RUB";
+          color: rgb(229, 248, 176);
+          position: absolute;
+          top: 103px;
+          left: 265px;
+          z-index: 10;
+      }
+      #vault:checked ~ .calculator .vaultLabel::before {
+          content: "USD";
+      }
+      .vaultLabel::after {
+          content: "0 руб. 00.00 коп.";
+          width: 140px;
+          color: rgb(229, 248, 176);
+          position: absolute;
+          top: 22.5px;
+          left: 345px;
+          z-index: 10;
+      }
+      #vault:checked ~ .calculator .vaultLabel::after {
+          content: "$0.00";
+          text-align: center;
+      }
+      input {
+          display: none;
+      }
+      [type="number"] {
+          display: block;
+          position: absolute;
+          width: 91px;
+          height: 26px;
+          top: 65px;
+          left: 187.5px;
+          border: 5px solid gray;
+          border-radius: 17px 17px 17px 17px;
+          z-index: 10;
+          font-size: 18px;
+          outline: none;
+      }
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+      }
+      input[type='number'] {
+          -moz-appearance: textfield;
+      }
+      .monthSwitch {
+          display: inline-block;
+          width: 16px;
+          height: 1em;
+          color: rgb(229, 248, 176);
+          position: relative;
+          top: 103px;
+          left: 362px;
+          z-index: 10;
+      }
+      .monthSwitch > div {
+          position: absolute;
+          display: none;
+      }
+      #_12:checked ~ .calculator ._12,
+      #_11:checked ~ .calculator ._11,
+      #_10:checked ~ .calculator ._10,
+      #_9:checked ~ .calculator ._9,
+      #_8:checked ~ .calculator ._8,
+      #_7:checked ~ .calculator ._7,
+      #_6:checked ~ .calculator ._6,
+      #_5:checked ~ .calculator ._5,
+      #_4:checked ~ .calculator ._4,
+      #_3:checked ~ .calculator ._3,
+      #_2:checked ~ .calculator ._2,
+      #_1:checked ~ .calculator ._1 {
+          display: block;
+      }
+      .monthSwitch > div > label {
+          color: rgb(229, 248, 176);
+          position: absolute;
+          left: 3px;
+          z-index: 10;
+          cursor: pointer;
+      }
+      .monthSwitch > div > label:nth-of-type(1) {
+          top: -16.2px;
+      }
+      .monthSwitch > div > label:nth-of-type(2) {
+          bottom: -17px;
       }
   </style>
 </head>
 <body style="background: black">
-    <input id="one" type="radio" name="month" checked>
-    <input id="two" type="radio" name="month">
-    <input id="three" type="radio" name="month">
-    <input id="four" type="radio" name="month">
-    <input id="five" type="radio" name="month">
-    <input id="six" type="radio" name="month">
-    <input id="seven" type="radio" name="month">
-    <input id="eight" type="radio" name="month">
-    <input id="nine" type="radio" name="month">
-    <input id="ten" type="radio" name="month">
-    <input id="eleven" type="radio" name="month">
-    <input id="twelve" type="radio" name="month">
-    <div id="calculator">
+    <input id="_1" type="radio" name="month">
+    <input id="_2" type="radio" name="month">
+    <input id="_3" type="radio" name="month">
+    <input id="_4" type="radio" name="month">
+    <input id="_5" type="radio" name="month">
+    <input id="_6" type="radio" name="month">
+    <input id="_7" type="radio" name="month">
+    <input id="_8" type="radio" name="month">
+    <input id="_9" type="radio" name="month">
+    <input id="_10" type="radio" name="month">
+    <input id="_11" type="radio" name="month">
+    <input id="_12" type="radio" name="month" checked>
+    <input id="vault" type="checkbox">
+    <div class="calculator">
+        <div class="currentVault">
+            <label for="vault">&#9652;</label>
+            <label for="vault">&#9662;</label>
+            <span>RUB</span>
+            <span>USD</span>
+        </div>
+        <input type="number" maxlength="9999999">
+        <div class="monthLabel">
+            <span class="vaultLabel"></span>
+            <span class="monthSwitch">
+              <div class="_12">12
+                <label for="_12">&#9652;</label>
+                <label for="_11">&#9662;</label>
+              </div>
+              <div class="_11">11
+                <label for="_12">&#9652;</label>
+                <label for="_10">&#9662;</label>
+              </div>
+              <div class="_10">10
+                <label for="_11">&#9652;</label>
+                <label for="_9">&#9662;</label>
+              </div>
+              <div class="_9">9
+                <label for="_10">&#9652;</label>
+                <label for="_8">&#9662;</label>
+              </div>
+              <div class="_8">8
+                <label for="_9">&#9652;</label>
+                <label for="_7">&#9662;</label>
+              </div>
+              <div class="_7">7
+                <label for="_8">&#9652;</label>
+                <label for="_6">&#9662;</label>
+              </div>
+              <div class="_6">6
+                <label for="_7">&#9652;</label>
+                <label for="_5">&#9662;</label>
+              </div>
+              <div class="_5">5
+                <label for="_6">&#9652;</label>
+                <label for="_4">&#9662;</label>
+              </div>
+              <div class="_4">4
+                <label for="_5">&#9652;</label>
+                <label for="_3">&#9662;</label>
+              </div>
+              <div class="_3">3
+                <label for="_4">&#9652;</label>
+                <label for="_2">&#9662;</label>
+              </div>
+              <div class="_2">2
+                <label for="_3">&#9652;</label>
+                <label for="_1">&#9662;</label>
+              </div>
+              <div class="_1">1
+                <label for="_2">&#9652;</label>
+                <label for="_1">&#9662;</label>
+              </div>
+            </span>
+        </div>
         <div class="image"></div>
         <div class="image phone"></div>
         <div class="image home"></div>
         <div class="image car"></div>
         <div class="image plane"></div>
-        <div class="time">
-            <!-- "0" -->
-            <span class="time-font">руб.</span>
-            <!-- " 0" -->
-            <span class="time-font" style="font-size: 0.8em;">.00</span>
-            <span class="time-font">коп.</span>
-        </div>
-        <div class="cur-line">RUB</div>
         <div class="firstСolumn fcOne">6,600.00</div>
         <div class="firstСolumn fcThree">300.00</div>
         <div class="firstСolumn fcFour">10.00</div>
@@ -208,16 +344,6 @@
         <div class="secondСolumn scSix">в минуту</div>
         <div class="secondСolumn scSeven">в секунду</div>
         <div class="percent">10%</div>
-        <div class="month">
-            <span class="size">12</span>
-            <div class="up-month prev"></div>
-            <div class="down-month next"></div>
-        </div>
-        <div class="cur-summ">
-            <span class="size">RUB</span>
-            <div class="up-summ prev"></div>
-            <div class="dowm-summ next"></div>
-        </div>
     </div>
 </body>
 </html>
