@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <meta name="author" content="Veronika Shvakova">
+  <title>Мяч</title>
+  <style>
+      body {
+          margin: 20px auto;
+          width: 100%;
+          height: 100%;
+      }
+      #ball {
+          height: 150px;
+          width: 150px;
+          position: relative;
+          top: 30em;
+          background: radial-gradient(circle at 50px 50px, tomato, black);
+          border-radius: 50%;
+          animation: jumping 10s linear 0s infinite alternate both;
+      }
+      @keyframes jumping {
+          0% {
+              transform: translate(0%, -250%);
+              box-shadow: 15px 15px 25px 6px rgba(0, 0, 0, 0.30);
+          }
+          5% {
+              transform: translate(115%, 0%);
+              box-shadow: 5px 30px 30px 0px rgba(0, 0, 0, 0.30);
+          }
+          30% {
+              transform: translate(230%, -250%);
+              box-shadow: 20px 15px 25px 6px rgba(0, 0, 0, 0.30);
+          }
+          40% {
+              transform: translate(345%, 0%);
+              box-shadow: 10px 30px 30px 0px rgba(0, 0, 0, 0.30);
+          }
+          50% {
+              transform: translate(460%, -250%);
+              box-shadow: 25px 15px 25px 6px rgba(0, 0, 0, 0.30);
+          }
+          60% {
+              transform: translate(575%, 0%);
+              box-shadow: 15px 30px 30px 0px rgba(0, 0, 0, 0.30);
+          }
+          90% {
+              transform: translate(690%, -250%);
+              box-shadow: 30px 15px 25px 6px rgba(0, 0, 0, 0.30);
+          }
+          95% {
+              transform: translate(805%, 0%);
+              box-shadow: 20px 30px 30px 0px rgba(0, 0, 0, 0.30);
+          }
+          100% {
+              transform: translate(915%, -250%);
+              box-shadow: 35px 15px 25px 6px rgba(0, 0, 0, 0.31);
+          }
+      }
+    </style>
+</head>
+<body>
+    <div id="ball"></div>
+</body>
+</html>
