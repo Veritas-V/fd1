@@ -8,6 +8,9 @@
   <style>
       body {
           background-color:#040404;
+          width: 1520px;
+          height: 700px;
+          outline: 1px solid red;
       }
       #ball {
           height: 150px;
@@ -16,25 +19,25 @@
           background: radial-gradient(circle at 50px 50px, tomato, black);
           border-radius: 100%;
           animation: jumping 3s linear infinite,
-          jumping-left 25s linear infinite alternate both,
-          shadow 3s linear infinite alternate both;
+          jumping-left 10s linear infinite alternate both,
+          shadow 2.5s linear infinite alternate both;
       }
       @keyframes jumping {
           0% {
               bottom: 100%;
           }
           25% {
-              bottom: 0;
+              bottom: 2%;
               width: 150px;
               height: 150px;
           }
           30% {
-              bottom: 0;
+              bottom: 2%;
               width: 160px;
               height: 75px;
           }
           35% {
-              bottom: 0;
+              bottom: 2%;
               width: 150px;
               height: 150px;
           }
@@ -50,7 +53,7 @@
               left: 0;
           }
           to {
-              left: 100%;
+              left: 90%;
           }
       }
       @keyframes shadow {
