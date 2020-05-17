@@ -232,13 +232,16 @@ footer>div:last-child {
     aside>div:last-child {
         display: none;
     }
-    header, main, aside, article, footer {
+    header, main, aside, article, footer, article>ul {
         flex-direction: column;
         width: 95vw;
         height: auto;
     }
     aside>div:first-child {
         margin-bottom: 0.5vh;
+    }
+    article>ul>li {
+        flex-basis: 25vw;
     }
     article>div:nth-child(3),
     article>div:last-child {
@@ -283,11 +286,14 @@ footer>div:last-child {
     aside>div:last-child {
         display: none;
     }
-    header, main {
+    header, main, article>ul {
         flex-direction: column;
     }
     aside>div:first-child {
         margin-bottom: 0.5vh;
+    }
+    article>ul>li {
+        flex-basis: 25vw;
     }
     article>div:nth-child(n+3):nth-child(-n+4) {
         flex-grow: 1;
@@ -300,7 +306,7 @@ footer>div:last-child {
         min-height: 30vh;
     }
     footer>div:nth-child(n+1):nth-child(-n+4) {
-        min-width: 45vw;
+        min-width: 42.5vw;
     }
     footer>div:first-child>ul>li:nth-child(n+8)>p:nth-child(-n+14) {
         margin-bottom: -9vh;
