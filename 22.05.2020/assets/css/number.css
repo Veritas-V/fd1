@@ -1,0 +1,64 @@
+body {
+    display: grid;
+    grid-template: "number1 number2 number3"
+              "number4 number6 number5"
+              "number8 number7 number9"
+              "number11 number12 number10"
+              "number15 number13 number14"
+              "number18 number17 number16"
+              / 8px 8px 8px;
+}
+div:first-child {
+    grid-area: number1;
+}
+div:nth-child(2) {
+    grid-area: number2;
+}
+div:nth-child(3) {
+    grid-area: number3;
+}
+div:nth-child(4) {
+    grid-area: number4;
+}
+div:nth-child(5) {
+    grid-area: number5;
+}
+div:nth-child(6) {
+    grid-area: number6;
+}
+div:nth-child(7) {
+    grid-area: number7;
+}
+div:nth-child(8) {
+    grid-area: number8;
+}
+div:nth-child(9) {
+    grid-area: number9;
+}
+div:nth-child(10) {
+    grid-area: number10;
+}
+div:nth-child(11) {
+    grid-area: number11;
+}
+div:nth-child(12) {
+    grid-area: number12;
+}
+div:nth-child(13) {
+    grid-area: number13;
+}
+div:nth-child(14) {
+    grid-area: number14;
+}
+div:nth-child(15) {
+    grid-area: number15;
+}
+div:nth-child(16) {
+    grid-area: number16;
+}
+div:nth-child(17) {
+    grid-area: number17;
+}
+div:last-child {
+    grid-area: number18;
+}
