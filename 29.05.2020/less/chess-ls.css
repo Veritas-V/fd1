@@ -1,0 +1,97 @@
+body {
+  margin: 0;
+}
+main {
+  width: 100vmin;
+  height: 100vmin;
+  counter-reset: rowBefore 0 rowAfter 0;
+}
+main::before,
+main::after {
+  content: "abcdefgh";
+  height: 10vmin;
+  line-height: 10vmin;
+  font-size: 4vmin;
+  margin-left: 14vmin;
+  letter-spacing: 8.2vmin;
+}
+main section {
+  width: 100vmin;
+  height: 10vmin;
+  font-size: 0;
+}
+main section::before,
+main section::after {
+  display: inline-block;
+  content: "";
+  width: 10vmin;
+  height: 10vmin;
+  font-size: 4vmin;
+  vertical-align: top;
+  line-height: 10vmin;
+  text-align: center;
+}
+main section::before {
+  counter-increment: rowBefore;
+  content: counter(rowBefore);
+}
+main section::after {
+  counter-increment: rowAfter;
+  content: counter(rowAfter);
+}
+main section .dark {
+  outline: 1px solid #8f1818;
+  display: inline-block;
+  width: 10vmin;
+  height: 10vmin;
+  background: #8f1818;
+}
+main section .light {
+  display: inline-block;
+  outline: 1px solid #8f1818;
+  width: 10vmin;
+  height: 10vmin;
+  background: #e7ce9f;
+}
+main section .figure {
+  background-image: url(/29.05.2020/assets/img/chess.png);
+  background-size: 60vmin;
+  background-repeat: no-repeat;
+  background-position-y: 0.3030303vmin;
+}
+main section .rookDark {
+  background-position-x: -20.33898305vmin;
+}
+main section .knightDark {
+  background-position-x: -41.66666667vmin;
+}
+main section .bishopDark {
+  background-position-x: -30.76923077vmin;
+}
+main section .queenDark {
+  background-position-x: -9.52380952vmin;
+}
+main section .kingDark {
+  background-position-x: 1vmin;
+}
+main section .pawnDark {
+  background-position: -52.17391304vmin 0.3030303vmin;
+}
+main section .rookLight {
+  background-position: -20.33898305vmin -10vmin;
+}
+main section .knightLight {
+  background-position: -41.66666667vmin -10vmin;
+}
+main section .bishopLight {
+  background-position: -30.76923077vmin -10vmin;
+}
+main section .queenLight {
+  background-position: -9.52380952vmin -10vmin;
+}
+main section .kingLight {
+  background-position: 1vmin -10vmin;
+}
+main section .pawnLight {
+  background-position: -52.17391304vmin -10vmin;
+}

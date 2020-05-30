@@ -1,0 +1,116 @@
+@unit: 10vmin;
+@maxWidth: @unit * 10;
+@maxHeight: @unit * 10;
+@fSize: @unit / 2.5;
+@mgnLeft: @unit * 1.4;
+@lttrSpacing: @unit / 1.2195121951;
+@bgDark: rgb(143, 24, 24);
+@bgLight: rgb(231, 206, 159);
+@line: 1px solid @bgDark;
+@bgSize: @unit * 6;
+@darkBgPositionY: @unit / 33;
+@lightBgPositionY: -@unit;
+@rookBgPositionX: @bgSize / -5.9 * 2;
+@knightBgPositionX: @bgSize / -5.76 * 4;
+@bishopBgPositionX: @bgSize / -5.85 * 3;
+@queenBgPositionX: @bgSize / -6.3 * 1;
+@kingBgPositionX: @bgSize / -6 * -0.1;
+@pawnLightBgPosition: @bgSize / -5.75 * 5 @darkBgPositionY; 
+@pawnDarkBgPosition: @bgSize / -5.75 * 5 @lightBgPositionY;
+
+
+body {
+    margin: 0;
+}
+main {
+    width: @maxWidth;
+    height: @maxHeight;
+    counter-reset: rowBefore 0 rowAfter 0;
+    &::before, &::after {
+        content: "abcdefgh";
+        height: @unit;
+        line-height: @unit;
+        font-size: @fSize;
+        margin-left: @mgnLeft;
+        letter-spacing: @lttrSpacing;
+}
+    section {
+        width: @maxWidth;
+        height: @unit;
+        font-size: 0;
+        &::before, &::after {
+            display: inline-block;
+            content: "";
+            width: @unit;
+            height: @unit;
+            font-size: @fSize;
+            vertical-align: top;
+            line-height: @unit;
+            text-align: center;
+        }
+        &::before {
+            counter-increment: rowBefore;
+            content: counter(rowBefore);
+        }
+        &::after {
+            counter-increment: rowAfter;
+            content: counter(rowAfter);
+        }
+        .dark {
+            outline: @line;
+            display: inline-block;
+            width: @unit;
+            height: @unit;
+            background: @bgDark;
+        }
+        .light {
+            display: inline-block;
+            outline: @line;
+            width: @unit;
+            height: @unit;
+            background: @bgLight;
+        }
+        .figure {
+            background-image: url(/29.05.2020/assets/img/chess.png);
+            background-size: @bgSize;
+            background-repeat: no-repeat;
+            background-position-y: @darkBgPositionY;
+        }
+        .rookDark {
+            background-position-x: @rookBgPositionX;
+        }
+        .knightDark {
+            background-position-x: @knightBgPositionX;
+        }
+        .bishopDark {
+            background-position-x: @bishopBgPositionX;
+        }
+        .queenDark {
+            background-position-x: @queenBgPositionX;
+        }
+        .kingDark {
+            background-position-x: @kingBgPositionX;
+        }
+        .pawnDark {
+            background-position: @pawnLightBgPosition;
+        }
+        .rookLight {
+            background-position: @rookBgPositionX @lightBgPositionY;
+        }
+        .knightLight {
+            background-position: @knightBgPositionX @lightBgPositionY;
+        }
+        .bishopLight {
+            background-position: @bishopBgPositionX @lightBgPositionY;
+        }
+        .queenLight {
+            background-position: @queenBgPositionX @lightBgPositionY;
+        }
+        .kingLight {
+            background-position: @kingBgPositionX @lightBgPositionY;
+        }
+        .pawnLight {
+            background-position: @pawnDarkBgPosition;
+        }
+    }
+}
