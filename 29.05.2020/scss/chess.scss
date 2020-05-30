@@ -1,0 +1,181 @@
+$bgColotDark: #8e2426;
+$bgColotLight: #fffbdb;
+$outline: 5px double $bgColotDark;
+$unit: 10vmin;
+$fSize: $unit / 2.5;
+$location: center center;
+$bgSize: $unit * 6;
+$figureRowBgPositionY: $unit / 33;
+$figureEvenBgPositionY: -$unit;
+$rookBgPositionX: $bgSize / -5.9 * 2;
+$knightBgPositionX: $bgSize / -5.76 * 4;
+$bishopBgPositionX: $bgSize / -5.85 * 3;
+$queenBgPositionX: $bgSize / -6.3 * 1;
+$kingBgPositionX: $bgSize / -6 * -0.1;
+$pawnLightBgPosition: $bgSize / -5.75 * 5 $figureEvenBgPositionY; 
+$pawnDarkBgPosition: $bgSize / -5.75 * 5 $figureRowBgPositionY;
+
+
+body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(3, $unit 8 * $unit $unit);
+    grid-template-rows: repeat(3, $unit 8 * $unit $unit);
+    grid-template-areas: "letters-top" "chess" "letters-bottom";
+    .lettersTop {
+        grid-area: letters-top;
+        display: grid;
+        grid-template-columns: repeat(8, $unit);
+        grid-template-rows: repeat(1, $unit);
+        margin-left: $unit;
+        font-size: $fSize;
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
+        &__six,
+        &__seven,
+        &__eight {
+            place-self: $location;
+        }
+    }
+    .leftNumber {
+        display: grid;
+        grid-template-columns: repeat(1, $unit);
+        grid-template-rows: repeat(8, $unit);
+        margin-top: $unit;
+        margin-left: -$unit;
+        font-size: $fSize;
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
+        &__six,
+        &__seven,
+        &__eight {
+            place-self: $location;
+        }
+    }
+    .chess {
+        outline: $outline;
+        grid-area: chess;
+        display: grid;
+        grid-column: 2 / 3;
+        grid-template-rows: repeat(8, $unit);
+        grid-template-areas: "row"
+                             "even"
+                             "row"
+                             "even"
+                             "row"
+                             "even"
+                             "row"
+                             "even";
+        &__row {
+            display: grid;
+            grid-template-rows: 100%;
+            grid-template-columns: repeat(8, $unit);
+            &_dark {
+                background: $bgColotDark;
+            }
+            &_light {
+                background: $bgColotLight;
+            }
+            &_figure {
+                background-image: url(/29.05.2020/assets/img/chess.png);
+                background-size: $bgSize;
+                background-repeat: no-repeat;
+                background-position-y: $figureRowBgPositionY;
+            }
+            &_rook {
+                background-position-x: $rookBgPositionX;
+            }
+            &_knight {
+                background-position-x: $knightBgPositionX;
+            }
+            &_bishop {
+                background-position-x: $bishopBgPositionX;
+            }
+            &_queen {
+                background-position-x: $queenBgPositionX;
+            }
+            &_king {
+                background-position-x: $kingBgPositionX;
+            }
+            &_pawn {
+                background-position: $pawnLightBgPosition;
+            }
+        }
+        &__even {
+            display: grid;
+            grid-template-rows: 100%;
+            grid-template-columns: repeat(8, $unit);
+            &_light {
+                background: $bgColotLight;
+            }
+            &_dark {
+                background: $bgColotDark;
+            }
+            &_figure {
+                background-image: url(/29.05.2020/assets/img/chess.png);
+                background-size: $bgSize;
+                background-repeat: no-repeat;
+                background-position-y: $figureEvenBgPositionY;
+            }
+            &_rook {
+                background-position-x: $rookBgPositionX;
+            }
+            &_knight {
+                background-position-x: $knightBgPositionX;
+            }
+            &_bishop {
+                background-position-x: $bishopBgPositionX;
+            }
+            &_queen {
+                background-position-x: $queenBgPositionX;
+            }
+            &_king {
+                background-position-x: $kingBgPositionX;
+            }
+            &_pawn {
+                background-position: $pawnDarkBgPosition;
+            }
+        }
+    }
+    .rightNumber {
+        display: grid;
+        grid-template-columns: repeat(1, $unit);
+        grid-template-rows: repeat(8, $unit);
+        margin-top: $unit;
+        font-size: $fSize;
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
+        &__six,
+        &__seven,
+        &__eight {
+            place-self: $location;
+        }
+    }
+    .lettersBottom {
+        grid-area: letters-bottom;
+        display: grid;
+        grid-template-columns: repeat(8, $unit);
+        grid-template-rows: repeat(1, $unit);
+        margin-left: $unit;
+        font-size: $fSize;
+        &__one,
+        &__two,
+        &__three,
+        &__four,
+        &__five,
+        &__six,
+        &__seven,
+        &__eight {
+            place-self: $location;
+        }
+    }
+}

@@ -1,0 +1,189 @@
+body {
+  margin: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10vmin 80vmin 10vmin)[3];
+      grid-template-columns: repeat(3, 10vmin 80vmin 10vmin);
+  -ms-grid-rows: (10vmin 80vmin 10vmin)[3];
+      grid-template-rows: repeat(3, 10vmin 80vmin 10vmin);
+      grid-template-areas: "letters-top" "chess" "letters-bottom";
+}
+
+body .lettersTop {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: letters-top;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10vmin)[8];
+      grid-template-columns: repeat(8, 10vmin);
+  -ms-grid-rows: (10vmin)[1];
+      grid-template-rows: repeat(1, 10vmin);
+  margin-left: 10vmin;
+  font-size: 4vmin;
+}
+
+body .lettersTop__one, body .lettersTop__two, body .lettersTop__three, body .lettersTop__four, body .lettersTop__five, body .lettersTop__six, body .lettersTop__seven, body .lettersTop__eight {
+  place-self: center center;
+}
+
+body .leftNumber {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10vmin)[1];
+      grid-template-columns: repeat(1, 10vmin);
+  -ms-grid-rows: (10vmin)[8];
+      grid-template-rows: repeat(8, 10vmin);
+  margin-top: 10vmin;
+  margin-left: -10vmin;
+  font-size: 4vmin;
+}
+
+body .leftNumber__one, body .leftNumber__two, body .leftNumber__three, body .leftNumber__four, body .leftNumber__five, body .leftNumber__six, body .leftNumber__seven, body .leftNumber__eight {
+  place-self: center center;
+}
+
+body .chess {
+  outline: 5px double #8e2426;
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: chess;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2 / 3;
+  -ms-grid-rows: (10vmin)[8];
+      grid-template-rows: repeat(8, 10vmin);
+      grid-template-areas: "row" "even" "row" "even" "row" "even" "row" "even";
+}
+
+body .chess__row {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-grid-columns: (10vmin)[8];
+      grid-template-columns: repeat(8, 10vmin);
+}
+
+body .chess__row_dark {
+  background: #8e2426;
+}
+
+body .chess__row_light {
+  background: #fffbdb;
+}
+
+body .chess__row_figure {
+  background-image: url(/29.05.2020/assets/img/chess.png);
+  background-size: 60vmin;
+  background-repeat: no-repeat;
+  background-position-y: 0.30303vmin;
+}
+
+body .chess__row_rook {
+  background-position-x: -20.33898vmin;
+}
+
+body .chess__row_knight {
+  background-position-x: -41.66667vmin;
+}
+
+body .chess__row_bishop {
+  background-position-x: -30.76923vmin;
+}
+
+body .chess__row_queen {
+  background-position-x: -9.52381vmin;
+}
+
+body .chess__row_king {
+  background-position-x: 1vmin;
+}
+
+body .chess__row_pawn {
+  background-position: -52.17391vmin -10vmin;
+}
+
+body .chess__even {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 100%;
+      grid-template-rows: 100%;
+  -ms-grid-columns: (10vmin)[8];
+      grid-template-columns: repeat(8, 10vmin);
+}
+
+body .chess__even_light {
+  background: #fffbdb;
+}
+
+body .chess__even_dark {
+  background: #8e2426;
+}
+
+body .chess__even_figure {
+  background-image: url(/29.05.2020/assets/img/chess.png);
+  background-size: 60vmin;
+  background-repeat: no-repeat;
+  background-position-y: -10vmin;
+}
+
+body .chess__even_rook {
+  background-position-x: -20.33898vmin;
+}
+
+body .chess__even_knight {
+  background-position-x: -41.66667vmin;
+}
+
+body .chess__even_bishop {
+  background-position-x: -30.76923vmin;
+}
+
+body .chess__even_queen {
+  background-position-x: -9.52381vmin;
+}
+
+body .chess__even_king {
+  background-position-x: 1vmin;
+}
+
+body .chess__even_pawn {
+  background-position: -52.17391vmin 0.30303vmin;
+}
+
+body .rightNumber {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10vmin)[1];
+      grid-template-columns: repeat(1, 10vmin);
+  -ms-grid-rows: (10vmin)[8];
+      grid-template-rows: repeat(8, 10vmin);
+  margin-top: 10vmin;
+  font-size: 4vmin;
+}
+
+body .rightNumber__one, body .rightNumber__two, body .rightNumber__three, body .rightNumber__four, body .rightNumber__five, body .rightNumber__six, body .rightNumber__seven, body .rightNumber__eight {
+  place-self: center center;
+}
+
+body .lettersBottom {
+  -ms-grid-row: 3;
+  -ms-grid-column: 1;
+  grid-area: letters-bottom;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (10vmin)[8];
+      grid-template-columns: repeat(8, 10vmin);
+  -ms-grid-rows: (10vmin)[1];
+      grid-template-rows: repeat(1, 10vmin);
+  margin-left: 10vmin;
+  font-size: 4vmin;
+}
+
+body .lettersBottom__one, body .lettersBottom__two, body .lettersBottom__three, body .lettersBottom__four, body .lettersBottom__five, body .lettersBottom__six, body .lettersBottom__seven, body .lettersBottom__eight {
+  place-self: center center;
+}
+/*# sourceMappingURL=chess.css.map */
