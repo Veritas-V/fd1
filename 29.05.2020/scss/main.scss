@@ -8,11 +8,13 @@ $navItemTransformOriginY: 250px;
 
 
 .navBar {
-    outline: 1px solid blue;
     position: relative;
+    margin-top: -40px;
+    &__display {
+        display: none;
+    }
     &__item {
         overflow: hidden;
-        // outline: 1px solid red;
         position: absolute;
         transition: 2s;
         left: 100px;

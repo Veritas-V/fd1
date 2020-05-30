@@ -1,6 +1,10 @@
 .navBar {
-  outline: 1px solid blue;
   position: relative;
+  margin-top: -40px;
+}
+
+.navBar__display {
+  display: none;
 }
 
 .navBar__item {
