@@ -11,17 +11,28 @@
         var givenname = prompt('Введите ваше имя');
         var patronymic = prompt('Введите ваше отчество');
         var ageinyears = Number(prompt('Ваш возраст в годах?'));
+        var fiveyears = 5 + ageinyears;
         var sex = confirm('Ваш пол - мужской?')
-        var answersex = sex == true ? 'Ваш пол: мужской' : 'Ваш пол: женский';
+        var male;
+        if (sex == true) {
+            male = 'мужской';
+        } else {
+            male = 'женский';
+        }
         var pension = confirm('Вы на пенсии?')
-        var answerpension = pension == true ? 'Вы на пенсии: да' : 'Вы на пенсии: нет';
+        var retirementage;
+        if (pension == true) {
+            retirementage = 'да';
+        } else {
+            retirementage = 'нет';
+        }
         alert(`
         Ваше ФИО: ${surname} ${givenname} ${patronymic} 
         Ваш возраст в годах: ${ageinyears}
         Ваш возраст в днях: ${ageinyears * 365} 
         Через 5 лет вам будет: ${ageinyears + 5} 
-        ${answersex}
-        ${answerpension}`);
+        Ваш пол: ${male}
+        Вы на пенсии: ${retirementage}`);
     </script>
 </body>
 </html>
