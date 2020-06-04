@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS</title>
+</head>
+<body>
+    <script>
+        var surname = prompt('Введите вашу фамилию');
+        var givenname = prompt('Введите ваше имя');
+        var patronymic = prompt('Введите ваше отчество');
+        // console.log('Ваше ФИО: ' + surname + ' ' + givenname + ' ' + patronymic);
+
+        var ageinyears = Number(prompt('Ваш возраст в годах?'));
+        // console.log('Ваш возраст в годах: ' + ageinyears);
+
+        var ageindays = Number(prompt('Ваш возраст в днях?'))
+        // console.log('Ваш возраст в днях: ' + ageindays);
+
+        var fiveyears = 5 + ageinyears;
+        // console.log('Через 5 лет вам будет: ' + fiveyears);
+
+        var sex = confirm('Ваш пол - мужской?')
+        var answersex = sex == true ? 'Ваш пол: мужской' : 'Ваш пол: женский';
+
+        var pension = confirm('Вы на пенсии?')
+        var answerpension = pension == true ? 'Вы на пенсии: да' : 'Вы на пенсии: нет';
+
+        alert('Ваше ФИО: ' + surname + ' ' + givenname + ' ' + patronymic + 
+        '\nВаш возраст в годах: ' + ageinyears + 
+        '\nВаш возраст в днях: ' + ageindays + 
+        '\nЧерез 5 лет вам будет: ' + fiveyears + 
+        '\n' + answersex + 
+        '\n' + answerpension);
+    </script>
+</body>
+</html>
