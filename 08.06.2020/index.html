@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ДЗ</title>
+</head>
+
+<body>
+    <script>
+        const minArea = 10000;
+        const maxPopulation = 1400970200;
+        var userData = [];
+        var areaData = [];
+        var populationData = [];
+        
+        var country = prompt('Введите страну');
+        var area = Number(prompt('Введите площадь страны'));
+        var population = Number(prompt('Введите численность населения'));
+
+        function requestUserData() {
+            country = prompt("Введите страну");
+            area = Number(prompt('Введите площадь страны'));
+            population = Number(prompt('Введите численность населения'));
+            var res = {
+                country: country,
+                area: area,
+                population: population
+            }
+            return res;
+        }
+        function requestAreaData() {
+            if (area > minArea) {
+                var res = {
+                    country: country
+                }
+                return res;
+            }
+        }
+        function requestPopulationData() {
+            if (population < maxPopulation) {
+                var res = {
+                    country: country
+                }
+                return res;
+            }
+        }
+        do {
+            userData[userData.length] = requestUserData();
+        } while (confirm("Хотите ввести еще одну страну?"));
+
+        areaData[areaData.length] = requestAreaData();
+
+        populationData[populationData.length] = requestPopulationData();
+
+        // console.log(`Площадь` + areaData);
+        // console.log(`Численность населения` + populationData);
+
+        console.log(areaData);
+        console.log(populationData);
+    </script>
+</body>
+
+</html>
