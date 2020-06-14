@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шахматы</title>
+    <link href="https://db.onlinewebfonts.com/c/f8e22feaf5714ddbe7229dd963092c18?family=Chess+Alpha" rel="stylesheet"
+        type="text/css" />
+    <style>
+        body {
+            margin: 0;
+            font-family: "Chess Alpha";
+            font-style: normal;
+            font-size: 10vmin;
+        }
+
+        .row,
+        .even {
+            display: flex;
+        }
+
+        .row>div:nth-child(even),
+        .even>div:nth-child(odd) {
+            background-color: #8e2426;
+            outline: 1px solid #8e2426;
+        }
+
+        .row>div:nth-child(odd),
+        .even>div:nth-child(even) {
+            background-color: #fffbdb;
+            outline: 1px solid #8e2426;
+        }
+
+        .letters:before,
+        .letters:after {
+            content: "abcdefgh";
+            height: 10vmin;
+            display: flex;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            line-height: 10vmin;
+            font-size: 4vmin;
+            margin-left: 14vmin;
+            letter-spacing: 8.1vmin;
+        }
+
+        body>div>div::before,
+        body>div>div::after {
+            display: inline-block;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            content: "";
+            width: 10vmin;
+            height: 10vmin;
+            font-size: 4vmin;
+            vertical-align: top;
+            line-height: 10vmin;
+            text-align: center;
+        }
+
+        body>div {
+            counter-reset: rowBefore 0 rowAfter 0;
+        }
+
+        body>div>div::before {
+            counter-increment: rowBefore;
+            content: counter(rowBefore);
+        }
+
+        body>div>div::after {
+            counter-increment: rowAfter;
+            content: counter(rowAfter);
+        }
+
+        p {
+            margin: 0;
+        }
+
+        .item {
+            width: 10vmin;
+            height: 10vmin;
+            line-height: 10vmin;
+        }
+
+        .active {
+            transition: color 0.5s;
+            transition: font-size 0.5s;
+            color: rgba(255, 153, 0, 0.8);
+            line-height: 10vmin;
+            font-size: 11.2vmin;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="letters">
+        <div class="row">
+            <div class="item">
+                <p>t</p>
+            </div>
+            <div class="item">
+                <p>j</p>
+            </div>
+            <div class="item">
+                <p>n</p>
+            </div>
+            <div class="item">
+                <p>w</p>
+            </div>
+            <div class="item">
+                <p>l</p>
+            </div>
+            <div class="item">
+                <p>n</p>
+            </div>
+            <div class="item">
+                <p>j</p>
+            </div>
+            <div class="item">
+                <p>t</p>
+            </div>
+        </div>
+        <div class="even">
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+            <div class="item">
+                <p>o</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+        </div>
+        <div class="even">
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+        </div>
+        <div class="even">
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+            <div class="item">
+                <p></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+            <div class="item color">
+                <p>p</p>
+            </div>
+        </div>
+        <div class="even">
+            <div class="item color">
+                <p>r</p>
+            </div>
+            <div class="item color">
+                <p>h</p>
+            </div>
+            <div class="item color">
+                <p>b</p>
+            </div>
+            <div class="item color">
+                <p>q</p>
+            </div>
+            <div class="item color">
+                <p>k</p>
+            </div>
+            <div class="item color">
+                <p>b</p>
+            </div>
+            <div class="item color">
+                <p>h</p>
+            </div>
+            <div class="item color">
+                <p>r</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        var currentElement = null;
+        var items = document.querySelectorAll(".item");
+
+        for (var i = 0; i < items.length; i++) {
+            items[i].addEventListener("click", function (e) {
+                if (currentElement === null) {
+                    currentElement = e.target;
+                    currentElement.classList.add("active");
+                } else {
+                    var tmpInnerHTML = currentElement.innerHTML;
+                    currentElement.innerHTML = e.target.innerHTML;
+                    e.target.innerHTML = tmpInnerHTML;
+                    currentElement.classList.remove("active");
+                    currentElement = null;
+                }
+
+            });
+        }
+        
+
+        // for (var j = 0; j < items.length; j++) {
+        //     items[j].addEventListener("click", function (g) {
+        //         if (currentElement === null) {
+        //             var tmpInnerHTML = currentElement.innerHTML;
+        //             currentElement.innerHTML = e.target.innerHTML;
+        //             g.target.innerHTML = tmpInnerHTML;
+        //             currentElement.classList.remove("block");
+        //             currentElement = null;
+        //         } else {
+        //             alert("Выберите другую клетку");
+        //         }
+        //     });
+        // }
+        // alert("Выберите другую клетку");
+
+
+    </script>
+</body>
+
+</html>

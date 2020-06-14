@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hash</title>
+</head>
+
+<body>
+    <script>
+        var trees = {
+            "сосна": 20,
+            "ель": 5,
+            "дуб": 2,
+            "осина": 1
+        }
+        // var treeList = Object.keys(trees);
+        // for (var i = 0; i < treeList.length; i++) {
+        //   console.log(`${treeList[i]}: ${trees[treeList[i]]}`)
+
+        // }
+        for (var tree in trees) {
+            console.log(`${tree}: ${trees[tree]}`)
+        }
+    </script>
+</body>
+
+</html>
