@@ -313,15 +313,21 @@
                     currentElement.classList.add("active");
                 } else {
                     var tmpInnerHTML = currentElement.innerHTML;
-                    currentElement.innerHTML = e.target.innerHTML;
-                    e.target.innerHTML = tmpInnerHTML;
-                    currentElement.classList.remove("active");
-                    currentElement = null;
+                    if (currentElement.innerHTML !== "" && currentElement !== e.target.innerHTML) {
+                        alert("Выберите другую клетку");
+                    } else {
+                        currentElement.innerHTML = currentElement.innerHTML;
+                        e.target.innerHTML = tmpInnerHTML;
+                        currentElement.classList.remove("active");
+                        currentElement = null;
+                    }
                 }
-
             });
         }
-        
+
+
+
+
 
         // for (var j = 0; j < items.length; j++) {
         //     items[j].addEventListener("click", function (g) {
