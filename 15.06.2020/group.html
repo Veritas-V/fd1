@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <title>Group</title>
+</head>
+
+<body>
+    <form id="group" action="http://109.235.69.203:8080/data/1008" method="POST">
+        <div>
+            <label>ФИО:&nbsp;<input type="text" name="name" /></label>
+        </div>
+        <div>
+            <label>Дата сдачи экзамена:&nbsp;<input type="date" name="examDate" /></label>
+        </div>
+        <div>
+            <label>Марка машины:
+                <select name="carMake">
+                    <option value="Lada">Lada</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    <option value="Skoda">Skoda</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>Результат сдачи:
+                <select name="examResult">
+                    <option value="Сдал">Сдал</option>
+                    <option value="Не сдал">Не сдал</option>
+                </select>
+            </label>
+        </div>
+        <input type="submit" value="Отправить">
+    </form>
+    <button>Показать список группы</button>
+    <div class="list"></div>
+
+    <script>
+        $("#group").submit(function (e) {
+            e.preventDefault();
+
+            var $group = $(this);
+            var name = $("[name=name]").val();
+            var examDate = $("[name=examDate]").val();
+            var carMake = $("[name=carMake]").val();
+            var examResult = $("[name=examResult]").val();
+            var url = $group.attr('action');
+            var post = $.post("http://109.235.69.203:8080/data/1008", { name, examDate, carMake, examResult });
+
+            $("button").click(function () {
+                $(".list").append(
+                    `<table>
+                        <tr>
+                            <td>ФИО:</td>
+                            <td>${name}</td>
+                        </tr>
+                        <tr>
+                            <td>Дата:</td>
+                            <td>${examDate}</td>
+                        </tr>
+                        <tr>
+                            <td>Машина:</td>
+                            <td>${carMake}</td>
+                        </tr>
+                        <tr>
+                            <td>Результат:</td>
+                            <td>${examResult}</td>
+                        </tr>
+                    </table>`
+                );
+            });
+        });
+    </script>
+</body>
+
+</html>
